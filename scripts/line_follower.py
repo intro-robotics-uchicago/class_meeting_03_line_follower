@@ -57,8 +57,12 @@ class Follower:
                 cv2.imshow("window", image)
                 cv2.waitKey(3)
 
+
+        def run(self):
+                rospy.spin()
+                
 if __name__ == '__main__':
 
         rospy.init_node('line_follower')
         follower = Follower()
-        rospy.spin()
+        follower.run()
